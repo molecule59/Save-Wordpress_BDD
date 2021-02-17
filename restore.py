@@ -58,8 +58,8 @@ def main():
 		main()
 
 	elif(choice == "2"):
-		#print("I will save your site before you backup your site")
-		#save()
+		print("I will save your site before you backup your site")
+		save()
 		backup()
 		main()
 	else:
