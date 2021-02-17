@@ -33,6 +33,8 @@ name_bdd = "/WP"
 dst_html = "/var/www/html/"
 #Source MySQL
 dst_bdd = "/var/lib/mysql/"
+#Bucket AWS
+bucket = "s3://aic-projet6/"
 extension_zip = ".zip"
 
 """
@@ -80,7 +82,7 @@ def choicebackup():
 		
 
 #Convert string to int type
-		choice2 = int(choice2)
+choice2 = int(choice2)
 #Define the File Name with the savelist.txt and number of the line choose
 file_nameN = linecache.getline(racine + "savelist.txt",choice2)
 #File Name string
@@ -90,7 +92,7 @@ file_name = file_nameN.rstrip('\n')
 
 
 #dowload file from AWS
-os.system("aws s3 cp s3://aic-projet6/" + file_name + extension_zip + " " + racine)
+os.system("aws s3 cp " + bucket + file_name + extension_zip + " " + racine)
 
 #Extract zip file in folder with the same name
 with ZipFile(racine + file_name + extension_zip, 'r') as zip: 
