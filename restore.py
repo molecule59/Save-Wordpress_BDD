@@ -3,6 +3,8 @@ import shutil
 from zipfile import ZipFile
 import datetime
 import time
+import linecache
+
 
 #Recup Date & Hour ----------------------------------------------------------------------------------------------------
 date = datetime.datetime.now()
@@ -27,18 +29,65 @@ wp_bdd = "/var/lib/mysql/WP/"
 name_html = "/wordpress"
 #Name of folder BDD
 name_bdd = "/WP"
+#Source apache2
 dst_html = "/var/www/html/"
+#Source MySQL
 dst_bdd = "/var/lib/mysql/"
 extension_zip = ".zip"
 
-
+"""
+#Backup
 print("Welcome on the script for restore Site and BDD")
 print("I will backup your site before you use this script")
 os.system("python3 " + racine + "save.py")
+"""
 
 
-#Input name of save
-file_name = input("Entrée le nom du fichier (sans l'extension): ")
+
+print (30 * '-')
+print ("   M A I N - M E N U")
+print (30 * '-')
+
+
+
+
+
+
+def choicebackup():
+	#Menu
+	print (30 * '-')
+	print ("			M A I N - M E N U")
+	print (30 * '-')
+	print ("1. " + linecache.getline(racine + "savelist.txt",1))
+	print ("2. " + linecache.getline(racine + "savelist.txt",2))
+	print ("3. " + linecache.getline(racine + "savelist.txt",3))
+	print ("4. " + linecache.getline(racine + "savelist.txt",4))
+	print ("5. " + linecache.getline(racine + "savelist.txt",5))
+	print (30 * '-')
+	 
+	#Choice Menu
+	choice2 = input("Enter your choice [1-5] : ")
+	 
+	#Convert string to int type
+	choice2 = int(choice2)
+
+	if (choice2 == 9):
+		exit()
+	while (choice !=1 and choice !=2 and choice !=3 and choice !=4 and choice !=5):
+		print("Veuillez rentrer un chiffre entre 1-5")
+		#Choice Menu
+		choice2 = input("Enter your choice [1-5] : ")
+		
+
+#Convert string to int type
+		choice2 = int(choice2)
+#Define the File Name with the savelist.txt and number of the line choose
+file_nameN = linecache.getline(racine + "savelist.txt",choice2)
+#File Name string
+file_nameN = str(file_nameN)
+#Remove back to line after the name of the file name
+file_name = file_nameN.rstrip('\n')
+
 
 #dowload file from AWS
 os.system("aws s3 cp s3://aic-projet6/" + file_name + extension_zip + " " + racine)
@@ -80,5 +129,5 @@ text = logR.read()
 logR.close()
  
 logW = open(racine + "log.txt", "w")
-logW.write("BACKUP	" + file_name + ".zip" + "	THE: " + date_hours + "\n" + text)
+logW.write("BACKUP	" + file_name + ".zip" + "		THE: " + date_hours + "\n" + text)
 logW.close()
