@@ -18,7 +18,9 @@ Dans savelist.txt on retrouve la liste de toutes les sauvegardes efffecuer, cett
 Dans les 2 scripts (save.py & restore.py) vous allez retrouver tout en haut les informations sur le projet, puis les imports utilisés suivis de la récupération de la date et de l'heure et les variables utilisées et à modifier selon votre configuration.
 
 
-save.py: Ce script créer un fichier zip nomée "Site-BDD_Date_Heure.zip" avec la variable wp_htm et wp_bdd qui sont les racines du wordpress, puis envoie le fichier zip dans le bucket AWS qui ensuite supprime le fichier zip créer précédement
+save.py: Ce script crée un fichier zip nommé "Site-BDD_Date_Heure.zip" avec la variable wp_html et wp_bdd qui sont les racines du wordpress, puis envoie le fichier zip dans le bucket AWS qui ensuite supprime le fichier zip créer précédemment. Créer le fichier dans les logs.
+
+restore.py: Il y a 3 fonction dans le script un est le main avec le menu princial, la fonction save lance le script save.py et la fonction backup vas afficher les 5 derniers save réaliser avec le script save.py pour pouvoir choisir lequel restorer. Si entre 1 à 5 il va resorer le nom du fichier choisit puis va le télécharger dans le bucket AWS et va l'extraire. Supprime le wordpress (bdd et html) .Puis copier coller les 2 dossiers dans les bons endroits choisir par les variables wp_html et wp_bdd, une fois celà fait on donne les droits classic sur les dossieer et on restart mysql et appache2. Puis enfin on supprime le zip et l'extract du zip et on ajoute au fichier log. Si différent de 1 à 5 retour au main.
 
 
 
