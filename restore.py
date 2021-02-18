@@ -83,13 +83,12 @@ def backup():
 	print ("3. " + linecache.getline(racine + "savelist.txt",3))
 	print ("4. " + linecache.getline(racine + "savelist.txt",4))
 	print ("5. " + linecache.getline(racine + "savelist.txt",5))
+	#if you want insert more line write "print ("+1. " + linecache.getline(racine + "savelist.txt",+1))" +1 is the next number
 	print(". Press any touch for Exit")
 	print (30 * '\033[31m-\033[0m')
 	 
 	#Choice Menu
 	choice2 = input("Enter your choice: ")
-
-
 
 	if (choice2 == "1" or choice2 == "2" or choice2 == "3" or choice2 == "4" or choice2 == "5"):
 		#choice2 string to int
@@ -101,16 +100,12 @@ def backup():
 		#Remove back to line after the name of the file name
 		file_name = file_nameN.rstrip('\n')
 
-
 		#dowload file from AWS
 		os.system("aws s3 cp " + bucket + file_name + extension_zip + " " + racine)
 		
 		#Extract zip file in folder with the same name
 		with ZipFile(racine + file_name + extension_zip, 'r') as zip: 
 			zip.extractall(racine + file_name)
-
-		#src_html = racine + file_name + name_html
-		#src_bdd = racine + file_name + name_bdd
 
 		#Delete folder Wordpress html & BDD
 		os.system("rm -rf " + wp_html )
