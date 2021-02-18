@@ -82,15 +82,17 @@ def backup():
 	print ("3. " + linecache.getline(racine + "savelist.txt",3))
 	print ("4. " + linecache.getline(racine + "savelist.txt",4))
 	print ("5. " + linecache.getline(racine + "savelist.txt",5))
-	print ("9. For Exit")
+	print(". Press any touch for Exit")
 	print (30 * '\033[31m-\033[0m')
 	 
 	#Choice Menu
-	choice2 = int(input("Enter your choice: "))
+	choice2 = input("Enter your choice: ")
 
 
 
-	if (choice2 == 1 or choice2 ==2 or choice2 ==3 or choice2 ==4 or choice2 ==5):
+	if (choice2 == "1" or choice2 == "2" or choice2 == "3" or choice2 == "4" or choice2 == "5"):
+		#choice2 string to int
+		choice2 = int(choice2)
 		#Define the File Name with the savelist.txt and number of the line choose
 		file_nameN = linecache.getline(racine + "savelist.txt",choice2)
 		#File Name string
