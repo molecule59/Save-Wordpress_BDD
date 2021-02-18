@@ -1,3 +1,8 @@
+#Guillaume Carpentier
+#18/02/2021
+
+
+
 import os
 import shutil
 from zipfile import ZipFile
@@ -49,13 +54,12 @@ def main():
 	print (30 * '\033[31m-\033[0m')
 
 	choice = input("Enter your choice: ")
-	#choice = int(choice)
 	if (choice == "1"):
 		save()
 		main()
 
 	elif(choice == "2"):
-		print("I will save your site before you backup your site")
+		print("\033[31mI will save your site before you backup your site\033[0m")
 		save()
 		backup()
 		main()
@@ -64,7 +68,7 @@ def main():
 
 
 def save():
-	#Backup
+	#Save with the second script
 	os.system("python3 " + racine + "save.py")
 
 
@@ -99,7 +103,7 @@ def backup():
 
 		#dowload file from AWS
 		os.system("aws s3 cp " + bucket + file_name + extension_zip + " " + racine)
-
+		
 		#Extract zip file in folder with the same name
 		with ZipFile(racine + file_name + extension_zip, 'r') as zip: 
 			zip.extractall(racine + file_name)
