@@ -34,11 +34,8 @@ dst_html = "/var/www/html/"
 dst_bdd = "/var/lib/mysql/"
 #Bucket AWS
 bucket = "s3://aic-projet6/"
+#Extension du fichier 
 extension_zip = ".zip"
-
-
-
-print("I will backup your site before you use this script")
 
 
 def main():
@@ -69,7 +66,6 @@ def main():
 def save():
 	#Backup
 	os.system("python3 " + racine + "save.py")
-
 
 
 def backup():
@@ -139,6 +135,7 @@ def backup():
 
 	else:
 		main()
+
 
 #Scénario ------------------------------------------------------------------------------------------
 main()
