@@ -14,7 +14,6 @@ Dans les 2 scripts (save.py & restore.py) vous aller retrouver tout en haut les 
 
 
 save.py: Vous allez retouver toutes les variables utilisé dance ce script
-#Variable -------------------------------------------------------------------------------------------------------------
 #Wordpress HTML
 wp_html = '/var/www/html/wordpress'
 #Wordpress BDD
