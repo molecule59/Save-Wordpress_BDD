@@ -1,5 +1,10 @@
 # Save-Wordpress_BDD
 
+Script python automatique à lancer tous les x temps pour sauvegarder un Wordpress dans un bucket AWS. Et un script semi-automatique pour lancer une sauvegarde manuelle ou lancer un restore d'une ancienne sauvegarde.
+
+
+
+
 Condition d'utilasation de ces scripts:
 -Debian10
 -Python3
@@ -9,8 +14,6 @@ https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-linux.html
 
 
 
-
-Script python automatique à lancer tous les x temps pour sauvegarder un Wordpress dans un bucket AWS. Et un script semi-automatique pour lancer une sauvegarde manuelle ou lancer un restore d'une ancienne sauvegarde.
 
 Dans log.txt vous allez retrouver l'historique des sauvegardes et des backups réaliser par les 2 scripts avec la date et l'heure.
 Dans savelist.txt on retrouve la liste de toutes les sauvegardes efffecuer, cette liste sert pour afficher les choix pour resore un wordpress dans restore.py
