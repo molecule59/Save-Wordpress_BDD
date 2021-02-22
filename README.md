@@ -25,15 +25,20 @@ Script python automatique à lancer tous les x temps pour sauvegarder un Wordpre
 
 Vous trouvez l'historique des sauvegardes et des backups réalisée par les 2 scripts avec la date et l'heure.
 
+
 **savelist.txt:**
 
 on retrouve la liste de toutes les sauvegardes effectué, cette liste sert pour afficher les choix pour restaurer un wordpress dans restore.py
 
 Dans les 2 scripts (save.py & restore.py) vous retrouvez tout en haut les informations sur le projet, puis les imports utilisés suivis de la récupération de la date et de l'heure et les variables utilisées et à modifier selon votre configuration personelle.
 
+
+
+
 **save.py:** 
 
 Ce script crée un fichier zip nommé "Site-BDD_Date_Heure.zip" avec la variable wp_html et wp_bdd qui sont les racines du wordpress, puis envoie le fichier zip dans le bucket AWS qui ensuite supprime le fichier zip créer précédemment. Créer le fichier dans les logs.
+
 
 **restore.py:**
 
