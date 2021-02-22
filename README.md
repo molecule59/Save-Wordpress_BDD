@@ -15,10 +15,13 @@ https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-linux.html
 
 
 
-Dans log.txt vous allez retrouver l'historique des sauvegardes et des backups réaliser par les 2 scripts avec la date et l'heure.
-Dans savelist.txt on retrouve la liste de toutes les sauvegardes efffecuer, cette liste sert pour afficher les choix pour resore un wordpress dans restore.py
+**log.txt:**
+Vous trouvez l'historique des sauvegardes et des backups réalisée par les 2 scripts avec la date et l'heure.
 
-Dans les 2 scripts (save.py & restore.py) vous allez retrouver tout en haut les informations sur le projet, puis les imports utilisés suivis de la récupération de la date et de l'heure et les variables utilisées et à modifier selon votre configuration.
+**savelist.txt**
+on retrouve la liste de toutes les sauvegardes effectué, cette liste sert pour afficher les choix pour restaurer un wordpress dans restore.py
+
+Dans les 2 scripts (save.py & restore.py) vous retrouvez tout en haut les informations sur le projet, puis les imports utilisés suivis de la récupération de la date et de l'heure et les variables utilisées et à modifier selon votre configuration personelle.
 
 **save.py:** 
 Ce script crée un fichier zip nommé "Site-BDD_Date_Heure.zip" avec la variable wp_html et wp_bdd qui sont les racines du wordpress, puis envoie le fichier zip dans le bucket AWS qui ensuite supprime le fichier zip créer précédemment. Créer le fichier dans les logs.
