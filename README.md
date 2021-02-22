@@ -16,9 +16,11 @@ https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-linux.html
 
 
 **log.txt:**
+
 Vous trouvez l'historique des sauvegardes et des backups réalisée par les 2 scripts avec la date et l'heure.
 
-**savelist.txt**
+**savelist.txt:**
+
 on retrouve la liste de toutes les sauvegardes effectué, cette liste sert pour afficher les choix pour restaurer un wordpress dans restore.py
 
 Dans les 2 scripts (save.py & restore.py) vous retrouvez tout en haut les informations sur le projet, puis les imports utilisés suivis de la récupération de la date et de l'heure et les variables utilisées et à modifier selon votre configuration personelle.
