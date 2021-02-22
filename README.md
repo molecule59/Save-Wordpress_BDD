@@ -6,11 +6,17 @@ Script python automatique à lancer tous les x temps pour sauvegarder un Wordpre
 
 
 **Pré Requis:**
+
 *-Debian10
+
 *-Python3
+
 *-Appache2 & MySql 8.0
+
 *-Installer AWScli et configurer un compte qui acces au bucket
+
 *https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-linux.html
+
 
 
 
