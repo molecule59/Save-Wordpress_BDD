@@ -1,3 +1,7 @@
+#Guillaume Carpentier (molecule59)
+#https://github.com/molecule59/Save-Wordpress_BDD
+#18/02/2121
+
 #Import --------------------------------------------------------------------------------------------------------------
 import shutil 
 from zipfile import ZipFile
