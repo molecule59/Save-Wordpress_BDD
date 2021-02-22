@@ -30,7 +30,7 @@ Vous trouvez l'historique des sauvegardes et des backups réalisée par les 2 sc
 
 on retrouve la liste de toutes les sauvegardes effectué, cette liste sert pour afficher les choix pour restaurer un wordpress dans restore.py
 
-Dans les 2 scripts (save.py & restore.py) vous retrouvez tout en haut les informations sur le projet, puis les imports utilisés suivis de la récupération de la date et de l'heure et les variables utilisées et à modifier selon votre configuration personelle.
+Dans les 2 scripts (save.py & restore.py) vous retrouvez tout en haut les informations sur le projet, puis les imports utilisés suivis de la récupération de la date et de l'heure et les variables utilisées et à modifiée selon votre configuration personelle.
 
 
 
@@ -42,7 +42,7 @@ Ce script crée un fichier zip nommé "Site-BDD_Date_Heure.zip" avec la variable
 
 **restore.py:**
 
-Il y a 3 fonctions dans le script un est le main avec le menu principal, la fonction save lance le script save.py et la fonction backup vont afficher les 5 derniers save réaliser avec le script save.py pour pouvoir choisir lequel restaurer. Si entre 1 à 5 il va restaurer le nom du fichier choisit puis va le télécharger dans le bucket AWS et va l'extraire. Supprime le wordpress (bdd et html) .Puis copier coller les 2 dossiers dans les bons endroits choisis par les variables wp_html et wp_bdd, une fois cela fait on donne les droits classiques sur les dossiers et on restart mysql et appache2. Puis enfin on supprime le zip et l'extract du zip et on ajoute au fichier log. Si différent de 1 à 5 retour au main.
+Il y a 3 fonctions dans le script l'un est le main avec le menu principal, la fonction save lance le script save.py et la fonction backup vont afficher les 5 derniers save réaliser avec le script save.py pour pouvoir choisir lequel restaurer. Si entre 1 à 5 il va restaurer le nom du fichier choisit puis va le télécharger dans le bucket AWS et va l'extraire. Supprime le wordpress (bdd et html) .Puis copier coller les 2 dossiers dans les bons endroits choisis par les variables wp_html et wp_bdd, une fois cela fait on donne les droits classiques sur les dossiers et on restart mysql et appache2. Puis enfin on supprime le zip et l'extract du zip et on ajoute au fichier log. Si différent de 1 à 5 retour au main.
 
 
 
